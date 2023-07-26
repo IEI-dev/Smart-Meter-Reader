@@ -1,0 +1,71 @@
+version: '3.6'
+services:
+  influxdb:
+    container_name: iEi.influxdb
+    image: influxdb:latest
+    ports:
+      - '8086:8086'
+    environment:
+      - INFLUXDB_DB=db0
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_ADMIN_PASSWORD=admin@123
+    networks:
+      external_net:
+        ipv4_address: 10.0.10.2
+  grafana:
+    container_name: iEi.grafana
+    image: grafana/grafana:latest
+    ports:
+      - '3000:3000'
+    depends_on:
+      - influxdb
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin@123
+      - GF_INSTALL_PLUGINS=gapit-htmlgraphics-panel
+    volumes:
+      - ./src/grafana/provisioning:/etc/grafana/provisioning
+    networks:
+      external_net:
+        ipv4_address: 10.0.10.3
+  nodered:
+    container_name: iEi.nodered
+    depends_on:
+        - grafana
+    image: nodered/node-red:latest
+    environment:
+        - TZ=America/Bogota
+    ports:
+        - "1880:1880"
+        - "1883:1883"
+    volumes:
+        - ./src/nodered:/data
+    networks:
+      external_net:
+        ipv4_address: 10.0.10.4
+  openvino:
+    container_name: iEi.openvino
+    depends_on:
+        - nodered
+    image: openvino/ubuntu22_dev:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    volumes:
+        - ./src/openvino:/data
+    networks:
+      external_net:
+        ipv4_address: 10.0.10.5
+
+
+networks:
+  external_net: 
+    name: External_Net
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 10.0.10.0/24
+
+
+
+
