@@ -20,7 +20,7 @@ sudo apt install -y curl
 curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - 
 sudo apt install -y nodejs 
 ```  
-![image](./screensho/1.png)
+![image](./screenshot/1.png)
 ![image](/uploads/13c16209267fe8e32a239d57d6ef1c0b/image.png)
 ![image](/uploads/85ab2ed39c0b35c3fd9162a4eb904287/image.png)   
    
