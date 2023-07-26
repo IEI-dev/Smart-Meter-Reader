@@ -11,7 +11,14 @@ you can prepare couple machines or install server and edge in a machine
 
     
 ## Server Installation(Host)
-- pre-requirement  
+- pre-requirement
+unzip large files
+```shell
+sudo chmod +x ./extract.sh
+./extract.sh
+```
+![image](./screenshot/0.png)
+    
 nodejs   
 link: https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/
    
