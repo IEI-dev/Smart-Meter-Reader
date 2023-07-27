@@ -1,0 +1,4077 @@
+[
+    {
+        "id": "42c0fd49fbb8a366",
+        "type": "tab",
+        "label": "test",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7d107645ab441082",
+        "type": "tab",
+        "label": "Demo-openvino",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "eda759da30d41bfb",
+        "type": "tab",
+        "label": "Demo-SystemInfo",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "02a85adfeead2ced",
+        "type": "tab",
+        "label": "Demo-Other",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "15cc2616692eef06",
+        "type": "mqtt-broker",
+        "name": "test",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2727525e87659a92",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "local",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "916a5f8c44783073",
+        "type": "aedes broker",
+        "z": "42c0fd49fbb8a366",
+        "name": "mqtt",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "dburl": "",
+        "usetls": false,
+        "x": 190,
+        "y": 100,
+        "wires": [
+            [
+                "a15092b21b8a2936"
+            ],
+            [
+                "a15092b21b8a2936"
+            ]
+        ]
+    },
+    {
+        "id": "e98ceee76518ed36",
+        "type": "mqtt in",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "topic": "gogogo",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 260,
+        "wires": [
+            [
+                "3600f2b4dcaf8cb8"
+            ]
+        ]
+    },
+    {
+        "id": "b2b3bda34328bc9d",
+        "type": "mqtt out",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "topic": "gogogo",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "15cc2616692eef06",
+        "x": 360,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "3600f2b4dcaf8cb8",
+        "type": "debug",
+        "z": "42c0fd49fbb8a366",
+        "name": "debug 8",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "08a584417d189704",
+        "type": "inject",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "b2b3bda34328bc9d"
+            ]
+        ]
+    },
+    {
+        "id": "a15092b21b8a2936",
+        "type": "debug",
+        "z": "42c0fd49fbb8a366",
+        "name": "debug 9",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "e183b39f6ce52f1e",
+        "type": "inject",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 480,
+        "wires": [
+            [
+                "48dadd09f813c975"
+            ]
+        ]
+    },
+    {
+        "id": "192799c2487f3995",
+        "type": "debug",
+        "z": "42c0fd49fbb8a366",
+        "name": "debug 10",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f8d8195a8d4a8371",
+        "type": "influxdb out",
+        "z": "42c0fd49fbb8a366",
+        "influxdb": "2727525e87659a92",
+        "name": "iei-testdb",
+        "measurement": "testdb",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "iei",
+        "x": 660,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "48dadd09f813c975",
+        "type": "random",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "low": 1,
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 420,
+        "y": 480,
+        "wires": [
+            [
+                "f8d8195a8d4a8371",
+                "192799c2487f3995",
+                "2cb643f49a268a63"
+            ]
+        ]
+    },
+    {
+        "id": "2cb643f49a268a63",
+        "type": "influxdb out",
+        "z": "42c0fd49fbb8a366",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb",
+        "measurement": "testdb",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 630,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "ab7306ce87989f42",
+        "type": "http in",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "url": "/test",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 280,
+        "y": 780,
+        "wires": [
+            [
+                "507a75393ec5e622"
+            ]
+        ]
+    },
+    {
+        "id": "507a75393ec5e622",
+        "type": "template",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\n<html>\n<head>\n<title>Hello World</title>\n</head>\n<body>\nHello World!!!\n</body>\n</html>",
+        "output": "str",
+        "x": 440,
+        "y": 780,
+        "wires": [
+            [
+                "75be36871593a985"
+            ]
+        ]
+    },
+    {
+        "id": "75be36871593a985",
+        "type": "http response",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 570,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "982d7849391a1479",
+        "type": "template",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div>\n  <p>Taken from wikpedia</p>\n  <img src=\"data:image/png;base64, {{payload}}.replace('/9j/', '')\" alt=\"Red dot\" />\n</div>",
+        "output": "str",
+        "x": 860,
+        "y": 1040,
+        "wires": [
+            [
+                "4b0bb0a8f93dca87",
+                "ae6b19aeaeaefec2"
+            ]
+        ]
+    },
+    {
+        "id": "4b0bb0a8f93dca87",
+        "type": "http response",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1030,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "c065fb024d84e6c2",
+        "type": "file in",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "filename": "./output.jpg",
+        "filenameType": "str",
+        "format": "stream",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 310,
+        "y": 1040,
+        "wires": [
+            [
+                "6eec87ee6376bc41"
+            ]
+        ]
+    },
+    {
+        "id": "ce311e3a04baae05",
+        "type": "base64",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "action": "str",
+        "property": "payload",
+        "x": 680,
+        "y": 1040,
+        "wires": [
+            [
+                "982d7849391a1479",
+                "a259e85f888ef1ca",
+                "a26d4d6581d4a717"
+            ]
+        ]
+    },
+    {
+        "id": "b057922a39ca6213",
+        "type": "inject",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 1160,
+        "wires": [
+            [
+                "c065fb024d84e6c2"
+            ]
+        ]
+    },
+    {
+        "id": "a259e85f888ef1ca",
+        "type": "debug",
+        "z": "42c0fd49fbb8a366",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "ae6b19aeaeaefec2",
+        "type": "debug",
+        "z": "42c0fd49fbb8a366",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "6eec87ee6376bc41",
+        "type": "image",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": true,
+        "outputs": 1,
+        "x": 500,
+        "y": 1040,
+        "wires": [
+            [
+                "ce311e3a04baae05"
+            ]
+        ]
+    },
+    {
+        "id": "a26d4d6581d4a717",
+        "type": "influxdb out",
+        "z": "42c0fd49fbb8a366",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb",
+        "measurement": "base64combine",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 910,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "25c1e346bd0cd4b3",
+        "type": "http in",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "url": "/test-base64-2",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 1500,
+        "wires": [
+            [
+                "d1ede5749e2eb284"
+            ]
+        ]
+    },
+    {
+        "id": "2232acdceacb032f",
+        "type": "template",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div>\n  <p>Taken from wikpedia</p>\n  <img src=\"data:image/png;base64, {{payload}}\" alt=\"Red dot\" />\n</div>",
+        "output": "str",
+        "x": 520,
+        "y": 1500,
+        "wires": [
+            [
+                "483a07214001fa76",
+                "6054ccf0f642bbf0"
+            ]
+        ]
+    },
+    {
+        "id": "483a07214001fa76",
+        "type": "http response",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 690,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "d1ede5749e2eb284",
+        "type": "file in",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "filename": "./b64-2.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 340,
+        "y": 1500,
+        "wires": [
+            [
+                "2232acdceacb032f"
+            ]
+        ]
+    },
+    {
+        "id": "402fd4911600322a",
+        "type": "inject",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 1620,
+        "wires": [
+            [
+                "d1ede5749e2eb284"
+            ]
+        ]
+    },
+    {
+        "id": "6054ccf0f642bbf0",
+        "type": "debug",
+        "z": "42c0fd49fbb8a366",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "5acd7a2cd23ddfb0",
+        "type": "http in",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "url": "/test-base64",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 1020,
+        "wires": [
+            [
+                "c065fb024d84e6c2"
+            ]
+        ]
+    },
+    {
+        "id": "020250bde909e99f",
+        "type": "inject",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 1380,
+        "wires": [
+            [
+                "58f61f7253ea6b29"
+            ]
+        ]
+    },
+    {
+        "id": "58f61f7253ea6b29",
+        "type": "file in",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "filename": "./output.jpg",
+        "filenameType": "str",
+        "format": "stream",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 330,
+        "y": 1380,
+        "wires": [
+            [
+                "344fee857557cdd0"
+            ]
+        ]
+    },
+    {
+        "id": "344fee857557cdd0",
+        "type": "base64",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "action": "str",
+        "property": "payload",
+        "x": 500,
+        "y": 1380,
+        "wires": [
+            [
+                "47d3f0194bccf38e"
+            ]
+        ]
+    },
+    {
+        "id": "47d3f0194bccf38e",
+        "type": "file",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "filename": "./b64-2.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 660,
+        "y": 1380,
+        "wires": [
+            [
+                "e1265e5fa7ee9a20"
+            ]
+        ]
+    },
+    {
+        "id": "e1265e5fa7ee9a20",
+        "type": "debug",
+        "z": "42c0fd49fbb8a366",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "91042574febc7daa",
+        "type": "image",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 520,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "d61e1f3c11ef96c0",
+        "type": "inject",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1860,
+        "wires": [
+            [
+                "ab64e72573f35cf7"
+            ]
+        ]
+    },
+    {
+        "id": "ab64e72573f35cf7",
+        "type": "file in",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "filename": "./b64-logo.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 310,
+        "y": 1860,
+        "wires": [
+            [
+                "91042574febc7daa"
+            ]
+        ]
+    },
+    {
+        "id": "5981e2cfcb06f627",
+        "type": "inject",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 2020,
+        "wires": [
+            [
+                "2a4fe510059c9cff"
+            ]
+        ]
+    },
+    {
+        "id": "2a4fe510059c9cff",
+        "type": "file in",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "filename": "./b64-logo.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 310,
+        "y": 2020,
+        "wires": [
+            [
+                "d47029a86e44fac0",
+                "2cc1a84b1b3dfa90"
+            ]
+        ]
+    },
+    {
+        "id": "d47029a86e44fac0",
+        "type": "influxdb out",
+        "z": "42c0fd49fbb8a366",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb",
+        "measurement": "b64-test",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 550,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "2cc1a84b1b3dfa90",
+        "type": "image",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 560,
+        "y": 2040,
+        "wires": []
+    },
+    {
+        "id": "194613fd6c804994",
+        "type": "file in",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "filename": "./b64-plan.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 310,
+        "y": 1980,
+        "wires": [
+            [
+                "d47029a86e44fac0",
+                "2cc1a84b1b3dfa90"
+            ]
+        ]
+    },
+    {
+        "id": "bab6695fef835a79",
+        "type": "inject",
+        "z": "42c0fd49fbb8a366",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1980,
+        "wires": [
+            [
+                "194613fd6c804994"
+            ]
+        ]
+    },
+    {
+        "id": "0bac18be694f6337",
+        "type": "mqtt in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "topic": "meter/image/base64/frame",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 480,
+        "wires": [
+            [
+                "aff72bb813eda144",
+                "b2b4c945d1f83ada",
+                "103cab4b8c0f6ab0"
+            ]
+        ]
+    },
+    {
+        "id": "aff72bb813eda144",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "b2b4c945d1f83ada",
+        "type": "base64",
+        "z": "7d107645ab441082",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 440,
+        "y": 520,
+        "wires": [
+            [
+                "5449de6fe35c3cd2"
+            ]
+        ]
+    },
+    {
+        "id": "5449de6fe35c3cd2",
+        "type": "image",
+        "z": "7d107645ab441082",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 640,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8e016ac9b3bf79c9",
+        "type": "mqtt in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "topic": "meter/result/value",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 40,
+        "wires": [
+            [
+                "0da92a0853184697",
+                "7c37c7d315d96e0b"
+            ]
+        ]
+    },
+    {
+        "id": "0da92a0853184697",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "7c37c7d315d96e0b",
+        "type": "influxdb out",
+        "z": "7d107645ab441082",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-result",
+        "measurement": "result",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 370,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "103cab4b8c0f6ab0",
+        "type": "file",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-frame.txt",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "2936ca98183e728d"
+            ]
+        ]
+    },
+    {
+        "id": "2936ca98183e728d",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 16",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "90bee275d2f0fd73",
+        "type": "http in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "url": "/result/image/frame",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 440,
+        "wires": [
+            [
+                "41fdb29e098cf88a"
+            ]
+        ]
+    },
+    {
+        "id": "126fe34746944aed",
+        "type": "template",
+        "z": "7d107645ab441082",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div>\n  <p>Step1: video to frame</p>\n  <img src=\"data:image/png;base64, {{payload}}\" alt=\"Red dot\" />\n</div>",
+        "output": "str",
+        "x": 570,
+        "y": 440,
+        "wires": [
+            [
+                "8ed74a037f50a5b9"
+            ]
+        ]
+    },
+    {
+        "id": "8ed74a037f50a5b9",
+        "type": "http response",
+        "z": "7d107645ab441082",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 730,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "41fdb29e098cf88a",
+        "type": "file in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-frame.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 400,
+        "y": 440,
+        "wires": [
+            [
+                "126fe34746944aed"
+            ]
+        ]
+    },
+    {
+        "id": "b7000fbb0564624f",
+        "type": "mqtt in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "topic": "meter/image/base64/segment",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 800,
+        "wires": [
+            [
+                "bf7fa0c065cbdb8f",
+                "b0fdabfd1205892f",
+                "64d03af24232f8fd"
+            ]
+        ]
+    },
+    {
+        "id": "bf7fa0c065cbdb8f",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 17",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "b0fdabfd1205892f",
+        "type": "base64",
+        "z": "7d107645ab441082",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 420,
+        "y": 840,
+        "wires": [
+            [
+                "05ec797892d18ca3"
+            ]
+        ]
+    },
+    {
+        "id": "05ec797892d18ca3",
+        "type": "image",
+        "z": "7d107645ab441082",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 620,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "64d03af24232f8fd",
+        "type": "file",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-segment.txt",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 450,
+        "y": 800,
+        "wires": [
+            [
+                "3cfdbbc696500bde"
+            ]
+        ]
+    },
+    {
+        "id": "3cfdbbc696500bde",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 18",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "0443aa8ccb24b255",
+        "type": "http in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "url": "/result/image/segment",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 760,
+        "wires": [
+            [
+                "7fa478743d990b81"
+            ]
+        ]
+    },
+    {
+        "id": "e8f495113a37c8a1",
+        "type": "template",
+        "z": "7d107645ab441082",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div>\n  <p>Step2: inference frame to segmentation</p>\n  <img src=\"data:image/png;base64, {{payload}}\" alt=\"Red dot\" />\n</div>",
+        "output": "str",
+        "x": 550,
+        "y": 760,
+        "wires": [
+            [
+                "5d4f9d97e273eff4"
+            ]
+        ]
+    },
+    {
+        "id": "5d4f9d97e273eff4",
+        "type": "http response",
+        "z": "7d107645ab441082",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 710,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "7fa478743d990b81",
+        "type": "file in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-segment.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 390,
+        "y": 760,
+        "wires": [
+            [
+                "e8f495113a37c8a1"
+            ]
+        ]
+    },
+    {
+        "id": "3937e6ce3c3eaa44",
+        "type": "mqtt in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "topic": "meter/image/base64/detection",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 1100,
+        "wires": [
+            [
+                "a4060473176d398a",
+                "4b05b731c6fdd36c",
+                "b38be4e9c8459213"
+            ]
+        ]
+    },
+    {
+        "id": "a4060473176d398a",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 19",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "4b05b731c6fdd36c",
+        "type": "base64",
+        "z": "7d107645ab441082",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 420,
+        "y": 1140,
+        "wires": [
+            [
+                "4cc20d98683be29f"
+            ]
+        ]
+    },
+    {
+        "id": "4cc20d98683be29f",
+        "type": "image",
+        "z": "7d107645ab441082",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 620,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "b38be4e9c8459213",
+        "type": "file",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-detection.txt",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 450,
+        "y": 1100,
+        "wires": [
+            [
+                "b986305f02f009d6"
+            ]
+        ]
+    },
+    {
+        "id": "b986305f02f009d6",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 20",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "9bda9da63af1e09e",
+        "type": "http in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "url": "/result/image/detection",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 1060,
+        "wires": [
+            [
+                "f0def4c0c228bd9b"
+            ]
+        ]
+    },
+    {
+        "id": "8d46651cf7113029",
+        "type": "template",
+        "z": "7d107645ab441082",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div>\n  <p>Step3: scale detection</p>\n  <img src=\"data:image/png;base64, {{payload}}\" alt=\"Red dot\" />\n</div>",
+        "output": "str",
+        "x": 590,
+        "y": 1060,
+        "wires": [
+            [
+                "6b8f7ff45c71f48f"
+            ]
+        ]
+    },
+    {
+        "id": "6b8f7ff45c71f48f",
+        "type": "http response",
+        "z": "7d107645ab441082",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 750,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "f0def4c0c228bd9b",
+        "type": "file in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-detection.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 430,
+        "y": 1060,
+        "wires": [
+            [
+                "8d46651cf7113029"
+            ]
+        ]
+    },
+    {
+        "id": "7a130ae560cc78ae",
+        "type": "mqtt in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "topic": "meter/image/base64/value",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 1400,
+        "wires": [
+            [
+                "790e3382df49f2af",
+                "feae3167cb0c7c21",
+                "0814c885b4d2fc52"
+            ]
+        ]
+    },
+    {
+        "id": "790e3382df49f2af",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 21",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "feae3167cb0c7c21",
+        "type": "base64",
+        "z": "7d107645ab441082",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 420,
+        "y": 1440,
+        "wires": [
+            [
+                "0e27fae481155627"
+            ]
+        ]
+    },
+    {
+        "id": "0e27fae481155627",
+        "type": "image",
+        "z": "7d107645ab441082",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 620,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "0814c885b4d2fc52",
+        "type": "file",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-value.txt",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 440,
+        "y": 1400,
+        "wires": [
+            [
+                "149ec4699fe5fcc1"
+            ]
+        ]
+    },
+    {
+        "id": "149ec4699fe5fcc1",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 22",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "df203fc5efe797ae",
+        "type": "http in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "url": "/result/image/value",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 1360,
+        "wires": [
+            [
+                "af260c9e54817af2"
+            ]
+        ]
+    },
+    {
+        "id": "2f02e63d60203440",
+        "type": "template",
+        "z": "7d107645ab441082",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div>\n  <p>Step4: find scale index, and get scale value</p>\n  <img src=\"data:image/png;base64, {{payload}}\" alt=\"Red dot\" />\n</div>",
+        "output": "str",
+        "x": 550,
+        "y": 1360,
+        "wires": [
+            [
+                "b0d83d1c63367a7d"
+            ]
+        ]
+    },
+    {
+        "id": "b0d83d1c63367a7d",
+        "type": "http response",
+        "z": "7d107645ab441082",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 710,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "af260c9e54817af2",
+        "type": "file in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-value.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 380,
+        "y": 1360,
+        "wires": [
+            [
+                "2f02e63d60203440"
+            ]
+        ]
+    },
+    {
+        "id": "dcd007551005bbfe",
+        "type": "mqtt in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "topic": "meter/image/base64/result_seg",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 1720,
+        "wires": [
+            [
+                "5dc22f95bd145fc6",
+                "d38ac5f0a9244ccd",
+                "92ffba9ae74dc803"
+            ]
+        ]
+    },
+    {
+        "id": "5dc22f95bd145fc6",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 23",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "d38ac5f0a9244ccd",
+        "type": "base64",
+        "z": "7d107645ab441082",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 440,
+        "y": 1760,
+        "wires": [
+            [
+                "14634294778c4ac3"
+            ]
+        ]
+    },
+    {
+        "id": "14634294778c4ac3",
+        "type": "image",
+        "z": "7d107645ab441082",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 640,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "92ffba9ae74dc803",
+        "type": "file",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-result_seg.txt",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 470,
+        "y": 1720,
+        "wires": [
+            [
+                "e4e1eef1272f9e56"
+            ]
+        ]
+    },
+    {
+        "id": "e4e1eef1272f9e56",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 24",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "29a3dedadb38f54f",
+        "type": "http in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "url": "/result/image/result_seg",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 200,
+        "y": 1680,
+        "wires": [
+            [
+                "e827ac78cdd7ca44"
+            ]
+        ]
+    },
+    {
+        "id": "9de8e5197d21c5f5",
+        "type": "template",
+        "z": "7d107645ab441082",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div>\n  <p>Step5: find a scale(bbox) closest to pointer(bbox)</p>\n  <img src=\"data:image/png;base64, {{payload}}\" alt=\"Red dot\" />\n</div>",
+        "output": "str",
+        "x": 590,
+        "y": 1680,
+        "wires": [
+            [
+                "ad9c25943f7728e8"
+            ]
+        ]
+    },
+    {
+        "id": "ad9c25943f7728e8",
+        "type": "http response",
+        "z": "7d107645ab441082",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 730,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "e827ac78cdd7ca44",
+        "type": "file in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-result_seg.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 430,
+        "y": 1680,
+        "wires": [
+            [
+                "9de8e5197d21c5f5"
+            ]
+        ]
+    },
+    {
+        "id": "12ce08fbc0f7b0c6",
+        "type": "mqtt in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "topic": "meter/image/base64/result",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 2040,
+        "wires": [
+            [
+                "cd77e93d550b0109",
+                "cb19bf2b6d3e9671",
+                "dce2b7dd71cfadbd",
+                "f0d3842815492ef4"
+            ]
+        ]
+    },
+    {
+        "id": "cd77e93d550b0109",
+        "type": "base64",
+        "z": "7d107645ab441082",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 440,
+        "y": 2080,
+        "wires": [
+            [
+                "6994f79f26525371"
+            ]
+        ]
+    },
+    {
+        "id": "6994f79f26525371",
+        "type": "image",
+        "z": "7d107645ab441082",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 640,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "cb19bf2b6d3e9671",
+        "type": "file",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-result.txt",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 460,
+        "y": 2040,
+        "wires": [
+            [
+                "e7a7484f38417a45"
+            ]
+        ]
+    },
+    {
+        "id": "e7a7484f38417a45",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 26",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 2040,
+        "wires": []
+    },
+    {
+        "id": "a599e724950c4ab7",
+        "type": "http in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "url": "/result/image/result",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 2000,
+        "wires": [
+            [
+                "f491440b126f7e9a"
+            ]
+        ]
+    },
+    {
+        "id": "e3f9ad227e901a46",
+        "type": "template",
+        "z": "7d107645ab441082",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div>\n  <p>Step6: return result</p>\n  <img src=\"data:image/png;base64, {{payload}}\" alt=\"Red dot\" />\n</div>",
+        "output": "str",
+        "x": 570,
+        "y": 2000,
+        "wires": [
+            [
+                "c67ae706f763a103"
+            ]
+        ]
+    },
+    {
+        "id": "c67ae706f763a103",
+        "type": "http response",
+        "z": "7d107645ab441082",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 730,
+        "y": 2000,
+        "wires": []
+    },
+    {
+        "id": "f491440b126f7e9a",
+        "type": "file in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-result.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 400,
+        "y": 2000,
+        "wires": [
+            [
+                "e3f9ad227e901a46"
+            ]
+        ]
+    },
+    {
+        "id": "9c1af6f313ed9692",
+        "type": "mqtt in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "topic": "meter/image/base64/combine",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 2360,
+        "wires": [
+            [
+                "a393585c35fe2d2e",
+                "e9d70304870d37ad",
+                "8a2571678d7d62dc"
+            ]
+        ]
+    },
+    {
+        "id": "a393585c35fe2d2e",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 27",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 2440,
+        "wires": []
+    },
+    {
+        "id": "e9d70304870d37ad",
+        "type": "base64",
+        "z": "7d107645ab441082",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 420,
+        "y": 2400,
+        "wires": [
+            [
+                "e350f3c372414c3d"
+            ]
+        ]
+    },
+    {
+        "id": "e350f3c372414c3d",
+        "type": "image",
+        "z": "7d107645ab441082",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 620,
+        "y": 2400,
+        "wires": []
+    },
+    {
+        "id": "8a2571678d7d62dc",
+        "type": "file",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-combine.txt",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 450,
+        "y": 2360,
+        "wires": [
+            [
+                "ccfa35d3d73e5ec0"
+            ]
+        ]
+    },
+    {
+        "id": "ccfa35d3d73e5ec0",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 28",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 2360,
+        "wires": []
+    },
+    {
+        "id": "1f0fe13966e6537f",
+        "type": "http in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "url": "/result/image/combine",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 2320,
+        "wires": [
+            [
+                "139ce7c4c304f254"
+            ]
+        ]
+    },
+    {
+        "id": "14c04c1ab4f82e20",
+        "type": "template",
+        "z": "7d107645ab441082",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div>\n  <p>Meter Inference</p>\n  <img src=\"data:image/png;base64, {{payload}}\" alt=\"Red dot\" />\n</div>",
+        "output": "str",
+        "x": 550,
+        "y": 2320,
+        "wires": [
+            [
+                "6093efeb04b642a3"
+            ]
+        ]
+    },
+    {
+        "id": "6093efeb04b642a3",
+        "type": "http response",
+        "z": "7d107645ab441082",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 710,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "139ce7c4c304f254",
+        "type": "file in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "filename": "./b64-combine.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 390,
+        "y": 2320,
+        "wires": [
+            [
+                "14c04c1ab4f82e20"
+            ]
+        ]
+    },
+    {
+        "id": "d987668a290d9e61",
+        "type": "mqtt in",
+        "z": "7d107645ab441082",
+        "name": "",
+        "topic": "meter/service",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "a43cc761e672e218",
+                "8db32c4a64ccf7d7",
+                "1e9a76926e235122"
+            ]
+        ]
+    },
+    {
+        "id": "a43cc761e672e218",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 29",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "8db32c4a64ccf7d7",
+        "type": "influxdb out",
+        "z": "7d107645ab441082",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-service",
+        "measurement": "service",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 380,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "1e9a76926e235122",
+        "type": "moment",
+        "z": "7d107645ab441082",
+        "name": "",
+        "topic": "timestamp",
+        "input": "payload",
+        "inputType": "msg",
+        "inTz": "Asia/Taipei",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "",
+        "locale": "en-US",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "Asia/Taipei",
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "f4f369575b063767"
+            ]
+        ]
+    },
+    {
+        "id": "f4f369575b063767",
+        "type": "influxdb out",
+        "z": "7d107645ab441082",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-timestamp",
+        "measurement": "timestamp",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 570,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f0d3842815492ef4",
+        "type": "influxdb out",
+        "z": "7d107645ab441082",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-b64-result",
+        "measurement": "b64-result",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 430,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "dce2b7dd71cfadbd",
+        "type": "debug",
+        "z": "7d107645ab441082",
+        "name": "debug 25",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "9eb33426468d7548",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/cpu",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "b64f53c5098ae545",
+                "c9659b1e646d931b"
+            ]
+        ]
+    },
+    {
+        "id": "4d6564865155d38c",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/mem",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 120,
+        "wires": [
+            [
+                "55d0dbd5ac152ac0",
+                "648aeddc653d0a2b"
+            ]
+        ]
+    },
+    {
+        "id": "12b5a0f4c3de1c61",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/0/engine-classes/Render",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 300,
+        "wires": [
+            [
+                "3f6d657b6d5b4a7f"
+            ]
+        ]
+    },
+    {
+        "id": "3f3dcf8f3a3e1b83",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/0/engine-classes/Blitter",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 340,
+        "wires": [
+            [
+                "158fae03724604de"
+            ]
+        ]
+    },
+    {
+        "id": "48ad8080cc383b5c",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/0/engine-classes/Video",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 320,
+        "y": 380,
+        "wires": [
+            [
+                "81aae46750bb55f7"
+            ]
+        ]
+    },
+    {
+        "id": "40cb232628d06b57",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/0/engine-classes/VideoEnhance",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 350,
+        "y": 420,
+        "wires": [
+            [
+                "f9de3fa15f8085c0"
+            ]
+        ]
+    },
+    {
+        "id": "f820ad9a9b3caa5d",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/0/engine-classes/Compute",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 340,
+        "y": 460,
+        "wires": [
+            [
+                "be33292fafafbdb6"
+            ]
+        ]
+    },
+    {
+        "id": "309981e38e71b951",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/0/name",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 220,
+        "wires": [
+            [
+                "44b360288c71d86d"
+            ]
+        ]
+    },
+    {
+        "id": "a644146508819332",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/0/pid",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 260,
+        "wires": [
+            [
+                "a79e1e548c06f713"
+            ]
+        ]
+    },
+    {
+        "id": "b64f53c5098ae545",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-cpu",
+        "measurement": "sysinfo-cpu",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 710,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "55d0dbd5ac152ac0",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-mem",
+        "measurement": "sysinfo-mem",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 710,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "44b360288c71d86d",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-0-name",
+        "measurement": "sysinfo-gpu-0-name",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 640,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a79e1e548c06f713",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-0-pid",
+        "measurement": "sysinfo-gpu-0-pid",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 630,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "3f6d657b6d5b4a7f",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-0-render",
+        "measurement": "sysinfo-gpu-0-render",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "158fae03724604de",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-0-blitter",
+        "measurement": "sysinfo-gpu-0-blitter",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "81aae46750bb55f7",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-0-video",
+        "measurement": "sysinfo-gpu-0-video",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f9de3fa15f8085c0",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-0-videoenhance",
+        "measurement": "sysinfo-gpu-0-videoenhance",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 780,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "be33292fafafbdb6",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-0-compute",
+        "measurement": "sysinfo-gpu-0-compute",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 770,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "221681ba2af1910f",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/1/engine-classes/Render",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 660,
+        "wires": [
+            [
+                "9678328e8791a0fd"
+            ]
+        ]
+    },
+    {
+        "id": "36b321ac30830460",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/1/engine-classes/Blitter",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 700,
+        "wires": [
+            [
+                "a17a1246e1a7f8c3"
+            ]
+        ]
+    },
+    {
+        "id": "2136d8a76669aac5",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/1/engine-classes/Video",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 320,
+        "y": 740,
+        "wires": [
+            [
+                "9bf2a4062c0f1053"
+            ]
+        ]
+    },
+    {
+        "id": "0a7d88097d4635df",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/1/engine-classes/VideoEnhance",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 350,
+        "y": 780,
+        "wires": [
+            [
+                "c4bdc776f5209786"
+            ]
+        ]
+    },
+    {
+        "id": "8961d560a7fd27ae",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/1/engine-classes/Compute",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 340,
+        "y": 820,
+        "wires": [
+            [
+                "46bf97c32ca21ccb"
+            ]
+        ]
+    },
+    {
+        "id": "a4d7c8c8d46248f4",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/1/name",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 580,
+        "wires": [
+            [
+                "4918cdafa7b72dd8"
+            ]
+        ]
+    },
+    {
+        "id": "ece62b3121b5321e",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/1/pid",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 620,
+        "wires": [
+            [
+                "ae7e8fd5718219fa"
+            ]
+        ]
+    },
+    {
+        "id": "4918cdafa7b72dd8",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-1-name",
+        "measurement": "sysinfo-gpu-1-name",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 640,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "ae7e8fd5718219fa",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-1-pid",
+        "measurement": "sysinfo-gpu-1-pid",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 630,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "9678328e8791a0fd",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-1-render",
+        "measurement": "sysinfo-gpu-1-render",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "a17a1246e1a7f8c3",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-1-blitter",
+        "measurement": "sysinfo-gpu-1-blitter",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "9bf2a4062c0f1053",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-1-video",
+        "measurement": "sysinfo-gpu-1-video",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "c4bdc776f5209786",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-1-videoenhance",
+        "measurement": "sysinfo-gpu-1-videoenhance",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 780,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "46bf97c32ca21ccb",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-1-compute",
+        "measurement": "sysinfo-gpu-1-compute",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 770,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "702158018dc87a66",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/2/engine-classes/Render",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 1000,
+        "wires": [
+            [
+                "eff643ec0dc9e39f"
+            ]
+        ]
+    },
+    {
+        "id": "1e65ccdf9a82a7db",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/2/engine-classes/Blitter",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 1040,
+        "wires": [
+            [
+                "32d5c20b91e754a6"
+            ]
+        ]
+    },
+    {
+        "id": "a6071240422664cd",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/2/engine-classes/Video",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 320,
+        "y": 1080,
+        "wires": [
+            [
+                "a70072f0e79f897c"
+            ]
+        ]
+    },
+    {
+        "id": "e73ac4f8c9468160",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/2/engine-classes/VideoEnhance",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 350,
+        "y": 1120,
+        "wires": [
+            [
+                "9b068bf178a67034"
+            ]
+        ]
+    },
+    {
+        "id": "8e774751de416462",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/2/engine-classes/Compute",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 340,
+        "y": 1160,
+        "wires": [
+            [
+                "738f97f8c2f3b9ed"
+            ]
+        ]
+    },
+    {
+        "id": "a3f0258eb28d34b1",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/2/name",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 920,
+        "wires": [
+            [
+                "df5ea86fa2555e84"
+            ]
+        ]
+    },
+    {
+        "id": "ab0468fd48a02981",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/2/pid",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 960,
+        "wires": [
+            [
+                "abebe820345481fd"
+            ]
+        ]
+    },
+    {
+        "id": "df5ea86fa2555e84",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-2-name",
+        "measurement": "sysinfo-gpu-2-name",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 640,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "abebe820345481fd",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-2-pid",
+        "measurement": "sysinfo-gpu-2-pid",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 630,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "eff643ec0dc9e39f",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-2-render",
+        "measurement": "sysinfo-gpu-2-render",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "32d5c20b91e754a6",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-2-blitter",
+        "measurement": "sysinfo-gpu-2-blitter",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "a70072f0e79f897c",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-2-video",
+        "measurement": "sysinfo-gpu-2-video",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "9b068bf178a67034",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-2-videoenhance",
+        "measurement": "sysinfo-gpu-2-videoenhance",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 780,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "738f97f8c2f3b9ed",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-2-compute",
+        "measurement": "sysinfo-gpu-2-compute",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 770,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "f94a321912a1f973",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/3/engine-classes/Render",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 1340,
+        "wires": [
+            [
+                "83340cfad43b6a51"
+            ]
+        ]
+    },
+    {
+        "id": "41a05aa1da1d6adf",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/3/engine-classes/Blitter",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 1380,
+        "wires": [
+            [
+                "038232b22fbfa282"
+            ]
+        ]
+    },
+    {
+        "id": "297cba12a145a1bf",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/3/engine-classes/Video",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 320,
+        "y": 1420,
+        "wires": [
+            [
+                "2158a828b557993f"
+            ]
+        ]
+    },
+    {
+        "id": "49c2da25c00afd19",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/3/engine-classes/VideoEnhance",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 350,
+        "y": 1460,
+        "wires": [
+            [
+                "cd4058af8df1a787"
+            ]
+        ]
+    },
+    {
+        "id": "8ede9b42d8e243aa",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/3/engine-classes/Compute",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 340,
+        "y": 1500,
+        "wires": [
+            [
+                "691981654a10e0cd"
+            ]
+        ]
+    },
+    {
+        "id": "b510a3e259da6ec1",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/3/name",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 1260,
+        "wires": [
+            [
+                "84c95ea1b0fa24d6"
+            ]
+        ]
+    },
+    {
+        "id": "f8baa06ae78b3801",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/3/pid",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 1300,
+        "wires": [
+            [
+                "dd1b36c6e4bc79b8"
+            ]
+        ]
+    },
+    {
+        "id": "84c95ea1b0fa24d6",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-3-name",
+        "measurement": "sysinfo-gpu-3-name",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 640,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "dd1b36c6e4bc79b8",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-3-pid",
+        "measurement": "sysinfo-gpu-3-pid",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 630,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "83340cfad43b6a51",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-3-render",
+        "measurement": "sysinfo-gpu-3-render",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "038232b22fbfa282",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-3-blitter",
+        "measurement": "sysinfo-gpu-3-blitter",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "2158a828b557993f",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-3-video",
+        "measurement": "sysinfo-gpu-3-video",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "cd4058af8df1a787",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-3-videoenhance",
+        "measurement": "sysinfo-gpu-3-videoenhance",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 780,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "691981654a10e0cd",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-3-compute",
+        "measurement": "sysinfo-gpu-3-compute",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 770,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "b0558aa04196cd03",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/4/engine-classes/Render",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 1660,
+        "wires": [
+            [
+                "b081b72186d78e5f"
+            ]
+        ]
+    },
+    {
+        "id": "a926e71055a46ceb",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/4/engine-classes/Blitter",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 1700,
+        "wires": [
+            [
+                "2e8b6fe3486b0b4f"
+            ]
+        ]
+    },
+    {
+        "id": "35e36c9bdb87139c",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/4/engine-classes/Video",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 320,
+        "y": 1740,
+        "wires": [
+            [
+                "a4c96e5fd6b85565"
+            ]
+        ]
+    },
+    {
+        "id": "03fa64eb3ca031f6",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/4/engine-classes/VideoEnhance",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 350,
+        "y": 1780,
+        "wires": [
+            [
+                "fda4d00c0c89021d"
+            ]
+        ]
+    },
+    {
+        "id": "dc0e01d55cf2f5ea",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/4/engine-classes/Compute",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 340,
+        "y": 1820,
+        "wires": [
+            [
+                "c6f23beb76da588f"
+            ]
+        ]
+    },
+    {
+        "id": "e7f210cb94c18350",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/4/name",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 1580,
+        "wires": [
+            [
+                "49490fc53dc3a3dc"
+            ]
+        ]
+    },
+    {
+        "id": "58e8e6b505b3056a",
+        "type": "mqtt in",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "topic": "meter/system/info/intel_gpu_top/clients/4/pid",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "15cc2616692eef06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 1620,
+        "wires": [
+            [
+                "d499ca2e1b2f0a52"
+            ]
+        ]
+    },
+    {
+        "id": "49490fc53dc3a3dc",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-4-name",
+        "measurement": "sysinfo-gpu-4-name",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 640,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "d499ca2e1b2f0a52",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-4-pid",
+        "measurement": "sysinfo-gpu-4-pid",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 630,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "b081b72186d78e5f",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-4-render",
+        "measurement": "sysinfo-gpu-4-render",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "2e8b6fe3486b0b4f",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-4-blitter",
+        "measurement": "sysinfo-gpu-4-blitter",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "a4c96e5fd6b85565",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-4-video",
+        "measurement": "sysinfo-gpu-4-video",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 760,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "fda4d00c0c89021d",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-4-videoenhance",
+        "measurement": "sysinfo-gpu-4-videoenhance",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 780,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "c6f23beb76da588f",
+        "type": "influxdb out",
+        "z": "eda759da30d41bfb",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb-sysinfo-gpu-4-compute",
+        "measurement": "sysinfo-gpu-4-compute",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 770,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "648aeddc653d0a2b",
+        "type": "debug",
+        "z": "eda759da30d41bfb",
+        "name": "debug 30",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c9659b1e646d931b",
+        "type": "debug",
+        "z": "eda759da30d41bfb",
+        "name": "debug 31",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "2af62b81debb1a94",
+        "type": "inject",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b056a7dfde1a47cb",
+        "type": "random",
+        "z": "eda759da30d41bfb",
+        "name": "",
+        "low": 1,
+        "high": 10,
+        "inte": "true",
+        "property": "payload",
+        "x": 340,
+        "y": 180,
+        "wires": [
+            [
+                "b64f53c5098ae545",
+                "55d0dbd5ac152ac0",
+                "648aeddc653d0a2b"
+            ]
+        ]
+    },
+    {
+        "id": "0aecd965ca757d6d",
+        "type": "file in",
+        "z": "02a85adfeead2ced",
+        "name": "",
+        "filename": "./b64-plan.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 350,
+        "y": 200,
+        "wires": [
+            [
+                "c3915d9af3f115b3",
+                "3308b6f7954f4ea2"
+            ]
+        ]
+    },
+    {
+        "id": "77461a95bfd03b9a",
+        "type": "http in",
+        "z": "02a85adfeead2ced",
+        "name": "",
+        "url": "/other/image/plan",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "0aecd965ca757d6d"
+            ]
+        ]
+    },
+    {
+        "id": "c3915d9af3f115b3",
+        "type": "template",
+        "z": "02a85adfeead2ced",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div>\n  <img src=\"{{payload}}\" alt=\"Red dot\" />\n</div>",
+        "output": "str",
+        "x": 490,
+        "y": 200,
+        "wires": [
+            [
+                "ee31fbf1d9b03dc5"
+            ]
+        ]
+    },
+    {
+        "id": "ee31fbf1d9b03dc5",
+        "type": "http response",
+        "z": "02a85adfeead2ced",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 630,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "5ad5c5f7740b15af",
+        "type": "file in",
+        "z": "02a85adfeead2ced",
+        "name": "",
+        "filename": "./b64-logo.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 370,
+        "y": 480,
+        "wires": [
+            [
+                "e66fb7b7598809b8",
+                "9aeb0544f97b6614"
+            ]
+        ]
+    },
+    {
+        "id": "68058cce338fa3f6",
+        "type": "http in",
+        "z": "02a85adfeead2ced",
+        "name": "",
+        "url": "/other/image/logo",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 480,
+        "wires": [
+            [
+                "5ad5c5f7740b15af"
+            ]
+        ]
+    },
+    {
+        "id": "e66fb7b7598809b8",
+        "type": "template",
+        "z": "02a85adfeead2ced",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<img src=\"{{payload}}\" alt=\"Red dot\" style=\"background-color:transparent\" />\n",
+        "output": "str",
+        "x": 510,
+        "y": 480,
+        "wires": [
+            [
+                "568dded3af3dc660"
+            ]
+        ]
+    },
+    {
+        "id": "568dded3af3dc660",
+        "type": "http response",
+        "z": "02a85adfeead2ced",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 650,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "9fb73035d8c7e3b1",
+        "type": "inject",
+        "z": "02a85adfeead2ced",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "42d90b65a2452ccb"
+            ]
+        ]
+    },
+    {
+        "id": "42d90b65a2452ccb",
+        "type": "random",
+        "z": "02a85adfeead2ced",
+        "name": "",
+        "low": 1,
+        "high": "10",
+        "inte": "true",
+        "property": "payload",
+        "x": 340,
+        "y": 120,
+        "wires": [
+            [
+                "a0b1cfd21f56861b"
+            ]
+        ]
+    },
+    {
+        "id": "a0b1cfd21f56861b",
+        "type": "influxdb out",
+        "z": "02a85adfeead2ced",
+        "influxdb": "2727525e87659a92",
+        "name": "meter-testdb",
+        "measurement": "fakevalue",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "iei",
+        "bucket": "meter",
+        "x": 510,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "3308b6f7954f4ea2",
+        "type": "image",
+        "z": "02a85adfeead2ced",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 520,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "9aeb0544f97b6614",
+        "type": "image",
+        "z": "02a85adfeead2ced",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 540,
+        "y": 540,
+        "wires": []
+    }
+]
